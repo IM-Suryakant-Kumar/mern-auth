@@ -26,7 +26,7 @@ app.use(urlencoded({ extended: true }))
 app.use(morgan("tiny"))
 app.use(helmet())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://mern-auth-opal.vercel.app/",
     credentials: true,
     optionsSuccessStatus: 200
 }))
