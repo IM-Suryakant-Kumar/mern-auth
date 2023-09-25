@@ -18,23 +18,30 @@ import errorHandlerMiddleware from "./middleware/error-handler.js"
 import connectDB from "./db/connect.js"
 
 // routers
+import authRouter from "./routes/auth.js"
 
 // middleware
 app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan("tiny"))
 app.use(helmet())
-app.use(cors())
+app.use(cors({
+    origin: "*",
+    credentials: true,
+    optionsSuccessStatus: 200
+}))
 app.use(cookieParser())
 
-
+// routes
+app.use("/api/v1/auth", authRouter)
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
+
 const start = async() => {
     try {
-        // await connectDB(process.env.MONGO_URI)
+        await connectDB(process.env.MONGO_URI)
         app.listen(4000, () => {
             console.log(`Listening on port 4000...`)
         })

@@ -1,4 +1,4 @@
-export { default as BadRequestError } from "./bad-request"
-export { default as NotFoundError } from "./not-found"
-export { default as UnauthenticatedError } from "./unauthenticated"
-export { default as UnauthorizedError } from "./unauthorized"
+export { default as BadRequestError } from "./bad-request.js"
+export { default as NotFoundError } from "./not-found.js"
+export { default as UnauthenticatedError } from "./unauthenticated.js"
+export { default as UnauthorizedError } from "./unauthorized.js"

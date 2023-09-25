@@ -1,6 +1,6 @@
-import User from "../models/User"
+import User from "../models/User.js"
 import jwt from "jsonwebtoken"
-import { UnauthenticatedError, UnauthorizedError } from "../errors"
+import { UnauthenticatedError, UnauthorizedError } from "../errors/index.js"
 
 export const authentiateUser = async (req, res, next) => {
     const { token } = req.cookies
