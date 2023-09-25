@@ -1,5 +1,5 @@
-const { StatusCodes }  = require("http-status-codes")
+import { StatusCodes } from "http-status-codes"
 
 const notFoundMiddleware = (req, res) => res.status(StatusCodes.NOT_FOUND).send("Route does not found")
 
-module.exports = notFoundMiddleware
+export default notFoundMiddleware
