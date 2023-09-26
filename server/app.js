@@ -38,11 +38,12 @@ app.use("/api/v1/auth", authRouter)
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
+const PORT = process.env.PORT
 
 const start = async() => {
     try {
         await connectDB(process.env.MONGO_URI)
-        app.listen(4000, () => {
+        app.listen(PORT, () => {
             console.log(`Listening on port 4000...`)
         })
     } catch (error) {
